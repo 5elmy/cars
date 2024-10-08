@@ -1,0 +1,8 @@
+.bg {
+  background-image: url("../../assets/images/ChooseCar/Vector.png");
+  background-position: 2% bottom;
+
+  background-size: 80% 150%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}

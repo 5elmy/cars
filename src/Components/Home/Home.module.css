@@ -1,0 +1,26 @@
+:root {
+  --main-color: #1572d3;
+}
+.bgHome {
+  background-image: url("../../assets/images/HomePage/Frame.png");
+  background-position: right top;
+  background-size: 40% 150%;
+  background-repeat: no-repeat;
+  /* height: 80vh; */
+}
+
+.img_animate {
+  animation: appear 3s;
+}
+
+@keyframes appear {
+  0% {
+    max-width: 25%;
+    display: none;
+  }
+
+  100% {
+    display: block;
+    max-width: 100%;
+  }
+}
