@@ -12,6 +12,9 @@ import Footer from "./Components/Footer/Footer";
 import Rentcar from "./Components/Rentcar/Rentcar";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import NotFound from "./Components/NotFound/NotFound";
+import Login from "./Components/LoginPage/Login";
+import SignUp from "./Components/SignUp/SignUp";
+import CarsSection from "./Components/Cars/CarsSection";
 
 function App() {
   let routes: any = createHashRouter([
@@ -28,6 +31,9 @@ function App() {
     { path: "rentcar", element: <Rentcar /> },
     { path: "footer", element: <Footer /> },
     { index: "true", element: <LandingPage /> },
+    { path: "login", element: <Login /> },
+    { path: "signup", element: <SignUp /> },
+    { path: "car/:id", element: <CarsSection /> },
   ]);
   return (
     <>

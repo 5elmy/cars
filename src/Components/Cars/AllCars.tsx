@@ -9,6 +9,7 @@ import doors from "../../assets/images/Card/doors.png";
 import frame from "../../assets/images/Card/Frame.png";
 import right from "../../assets/images/Card/arrow-right.png";
 import Search from "../Search/Search";
+import { Link } from "react-router-dom";
 
 export default function AllCars() {
   let { getAllCars, carsList } = useContext(CarsContext);
@@ -56,13 +57,13 @@ export default function AllCars() {
                   )}
                 </div>
 
-                <p className="font-poppins text-[16px] font-medium leading-[17px] text-left my-3">
+                <p className=" edu text-[16px] font-medium leading-[17px] text-left my-3">
                   {ele.make} {ele.model}
                 </p>
                 <div className="my-3 flex gap-1">
                   <img src={star} alt="star" />
                   <div className="flex gap-1">
-                    <p className="font-poppins text-[12px] font-medium leading-[17px] text-left">
+                    <p className="edu text-[12px] font-medium leading-[17px] text-left">
                       4.6
                     </p>
                     <small className="text-[#808080]">
@@ -73,13 +74,13 @@ export default function AllCars() {
                 <div className="flex justify-between items-center my-3">
                   <div className="flex gap-2 items-center">
                     <img src={user} alt="user" />
-                    <p className="text-[#959595] font-poppins text-[12px] font-normal leading-[17px] text-left">
+                    <p className="text-[#959595] edu text-[12px] font-normal leading-[17px] text-left">
                       {ele.owners} Passagers
                     </p>
                   </div>
                   <div className="flex gap-3 items-center ">
                     <img src={frame} alt="frame" />
-                    <p className="text-[#959595] font-poppins text-[12px] font-normal leading-[17px] text-left">
+                    <p className="text-[#959595] edu text-[12px] font-normal leading-[17px] text-left">
                       auto
                     </p>
                   </div>
@@ -87,33 +88,36 @@ export default function AllCars() {
                 <div className="flex justify-between items-center my-3">
                   <div className="flex gap-2 items-center">
                     <img src={astric} alt="user" />
-                    <p className="text-[#959595] font-poppins text-[12px] font-normal leading-[17px] text-left">
+                    <p className="text-[#959595] edu text-[12px] font-normal leading-[17px] text-left">
                       Air conditioning{" "}
                     </p>
                   </div>
                   <div className="flex items-center">
                     <img src={doors} alt="doors" />
-                    <p className="text-[#959595] font-poppins text-[12px] font-normal leading-[17px] text-left">
+                    <p className="text-[#959595] edu text-[12px] font-normal leading-[17px] text-left">
                       4 doors{" "}
                     </p>
                   </div>
                 </div>
                 <hr className="bg-gray-500" />
                 <div className="flex justify-between items-center my-3">
-                  <p className="text-[#595959] font-poppins text-[14px] font-normal leading-[17px] text-left">
+                  <p className="text-[#595959] edu text-[14px] font-normal leading-[17px] text-left">
                     Price
                   </p>
-                  <p className="text-[#292929] font-poppins text-[16px] font-semibold leading-[17px] text-left">
+                  <p className="text-[#292929] edu text-[16px] font-semibold leading-[17px] text-left">
                     {ele.price}{" "}
-                    <span className="text-[#959595] font-poppins text-[12px] font-normal leading-[17px] text-left">
+                    <span className="text-[#959595] edu text-[12px] font-normal leading-[17px] text-left">
                       /day
                     </span>
                   </p>
                 </div>
                 <div className="flex justify-center items-center">
-                  <button className="w-[208px] h-[40px] bg-[#1572D3] text-[#fff] p-[8px] gap-4 rounded-lg font-poppins text-[14px] font-medium leading-[17px] text-center flex items-center justify-center">
+                  <Link to={`/car/${ele.id}`}>
+                  <button className="w-[208px] h-[40px] bg-[#1572D3] text-[#fff] p-[8px] gap-4 rounded-lg edu text-[14px] font-medium leading-[17px] text-center flex items-center justify-center">
                     Rent Now <img src={right} alt="" />
                   </button>
+                  
+                  </Link>
                 </div>
               </div>
             </div>

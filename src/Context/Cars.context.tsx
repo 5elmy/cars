@@ -1,20 +1,3 @@
-// import React, { createContext, ReactNode } from "react";
-// interface carsContext{
-//     value:string,
-//     setValue:React.Dispatch<React.SetStateAction<string>>
-// }
-// let cars:any = createContext<carsContext | undefined>(undefined)
-
-// interface carsTypeProvider {
-//     childrens:ReactNode
-// }
-// export default function CarsProvider:React.FC<carsTypeProvider>({childrens}){
-
-//     return <cars.Provider value={{}}>
-//         {childrens}
-//     </cars.Provider>
-
-// }
 
  import  axios from "axios"
 import React, { createContext, useState, ReactNode } from "react";
@@ -25,6 +8,8 @@ interface CarsContext {
   getAllCars?: any;
   carsList: [];
   SetcarsList?: [];
+  getspecificCar?:any;
+  specificCar:{}
 }
 
 const CarsContext = createContext<CarsContext | undefined>(undefined);
@@ -36,6 +21,7 @@ interface CarsProviderProps {
 const CarsProvider: React.FC<CarsProviderProps> = ({ children }) => {
   const [value, setValue] = useState<string>("");
   const [carsList, SetcarsList] = useState<[]>([]);
+  const [specificCar , setSpecificCar]= useState<object>({})
 
   let getAllCars = async (name: ""): Promise<void> => {
     await axios
@@ -49,8 +35,21 @@ const CarsProvider: React.FC<CarsProviderProps> = ({ children }) => {
       });
   };
 
+  let getspecificCar = async(id:number):Promise<void>=>{
+    await axios.get(`https://freetestapi.com/api/v1/cars/${id}`).then(res=>{
+      console.log(res);
+      setSpecificCar(res.data)
+      
+
+    }).catch(err=>{
+      console.log(err);
+      
+    })
+
+  }
+
   return (
-    <CarsContext.Provider value={{ value, setValue, getAllCars, carsList }}>
+    <CarsContext.Provider value={{ value, setValue, getAllCars, carsList  , getspecificCar , specificCar}}>
       {children}
     </CarsContext.Provider>
   );

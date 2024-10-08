@@ -24,7 +24,7 @@ export default function Search() {
           />
           <button
             onClick={handleSearch}
-            className="absolute top-0 text-white right-4 w-[159px] h-[40px] rounded-[8px] bg-[--main-color]"
+            className="absolute top-0 text-white right-4 w-[159px] h-[40px] rounded-[8px] bg-[--main-color] edu"
           >
             Search
           </button>
