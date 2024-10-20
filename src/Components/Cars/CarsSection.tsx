@@ -36,13 +36,11 @@ export default function CarsSection() {
           <p className="my-5 font-poppins text-[38px] font-medium leading-[49.4px] text-center md:text-left">
             We offer the best experience with our rental deals
           </p>
-          <p className="my-5">Name : {specificCar.make}{" "}{specificCar.model}</p>
-          <p className="my-5">Engine : {specificCar.engine}</p>
-          <p className="my-5">Mile Age : {specificCar.mileage}</p>
-          <p className="my-5">transmission:{specificCar.transmission}</p>
-          <p className="my-5">Model:{specificCar.year}</p>
+          <p className="my-5">Name : {specificCar.car}{" "}{specificCar.car_model}</p>
+          <p className="my-5">Car Model : {specificCar.car_model} {specificCar.car_vin}</p>
+          <p className="my-5">Car Model Year : {specificCar.car_model_year}</p>
           <p className="my-5">Price:{specificCar.price}</p>
-          <p className="my-5">Fuel Type:{specificCar.fuelType}</p>
+        
 
 
           <div className="flex my-5 gap-3">

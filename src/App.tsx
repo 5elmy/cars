@@ -1,6 +1,6 @@
+
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-
 import MainLayout from "./Components/MainLayout/MainLayout";
 import Home from "./Components/Home/Home";
 import Works from "./Components/Works/Works";
@@ -17,11 +17,14 @@ import SignUp from "./Components/SignUp/SignUp";
 import CarsSection from "./Components/Cars/CarsSection";
 
 function App() {
-  let routes: any = createHashRouter([
+  const routes = createHashRouter([
     {
       path: "/",
       element: <MainLayout />,
-      children: [{ path: "home", element: <Home /> }],
+      children: [
+        { index: true, element: <Login /> }, // Corrected index route for login
+        { path: "home", element: <Home /> },
+      ],
       errorElement: <NotFound />,
     },
     { path: "work", element: <Works /> },
@@ -30,17 +33,15 @@ function App() {
     { path: "people", element: <People /> },
     { path: "rentcar", element: <Rentcar /> },
     { path: "footer", element: <Footer /> },
-    { index: "true", element: <LandingPage /> },
-    { path: "login", element: <Login /> },
+    { path: "all", element: <LandingPage /> },
     { path: "signup", element: <SignUp /> },
-    { path: "car/:id", element: <CarsSection /> },
+    { path: "car/:id", element: <CarsSection /> }, // Dynamic route for car details
   ]);
+
   return (
-    <>
-      <CarsProvider>
-        <RouterProvider router={routes} />
-      </CarsProvider>
-    </>
+    <CarsProvider>
+      <RouterProvider router={routes} />
+    </CarsProvider>
   );
 }
 

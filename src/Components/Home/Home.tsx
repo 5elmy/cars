@@ -2,8 +2,7 @@ import Styles from "./Home.module.css";
 import carimage from "../../assets/images/HomePage/car.png";
 import googlePlay from "../../assets/images/HomePage/andriod.png";
 import appstore from "../../assets/images/HomePage/ios.png";
-import Works from "../Works/Works";
-import Search from "../Search/Search";
+
 export default function Home() {
   return (
     <>
