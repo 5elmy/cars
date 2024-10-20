@@ -62,14 +62,14 @@
 //   );
 // }
 
-import React from "react";
+
 import Style from "./Login.module.css";
 import car from "../../assets/images/ChooseCar/Audi 1.png";
 import logo from "../../assets/images/login/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup"; // Import Yup
-import axios from "axios"; // Import axios for API calls
+
 
 export default function Login() {
   let navigate = useNavigate();

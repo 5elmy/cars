@@ -1,7 +1,7 @@
-import React from "react";
+
 import coteright from ".././assets/images/people/bg-sec6.png";
 import coteleft from ".././assets/images/people/cote.png";
-import image1 from ".././assets/images/people/Frame 984.png";
+
 import imageman from ".././assets/images/people/Rectangle 8.svg";
 import image3 from ".././assets/images/people/girl.png";
 

@@ -127,7 +127,7 @@ import logo from "../../assets/images/login/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup"; // Import Yup
-import axios from "axios";
+
 
 export default function SignUp() {
   let navigate = useNavigate();

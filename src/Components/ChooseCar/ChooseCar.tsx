@@ -1,4 +1,4 @@
-import React from "react";
+
 import Style from "./ChooseCar.module.css";
 import car from "../../assets/images/ChooseCar/Audi 1.png";
 import user from "../../assets/images/ChooseCar/user.png";

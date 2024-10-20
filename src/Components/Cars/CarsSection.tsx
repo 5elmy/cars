@@ -1,17 +1,17 @@
 
 import Style from "./Cars.module.css"
 import car from "../../assets/images/ChooseCar/Audi 1.png";
-import star from "../../assets/images/Card/star.png";
+
 import user from "../../assets/images/Card/user.png";
 import astric from "../../assets/images/Card/d8wxke_2_.png";
 import doors from "../../assets/images/Card/doors.png";
 import frame from "../../assets/images/Card/Frame.png";
-import right from "../../assets/images/Card/arrow-right.png";
-import { Link, useParams } from "react-router-dom";
+
+import {  useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { CarsContext } from "../../Context/Cars.context";
 export default function CarsSection() {
-  let {getspecificCar, specificCar} =useContext(CarsContext);
+  let {getspecificCar, specificCar}:any =useContext(CarsContext);
   let {id} = useParams()
   useEffect(()=>{
     getspecificCar(id)

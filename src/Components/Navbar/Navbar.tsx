@@ -223,12 +223,15 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="xl:flex gap-5 items-center hidden">
-          <button className={`${Styles.mainstyle}`}>Sign in</button>
+        <div className="xl:flex gap-5 justify-start items-center hidden  w-[200px]">
+          {/* <button onClick={()=>{navigate("/")}} className={`${Styles.mainstyle}`}>Sign Out</button> */}
+         
+          
           <button
+          onClick={()=>{navigate("/")}}
             className={`${Styles.mainstyle} bg-[--main-color] px-5 p-2 rounded-[8px] text-white`}
           >
-            Sign up
+            Sign Out
           </button>
         </div>
 
@@ -280,11 +283,9 @@ export default function Navbar() {
           </li>
           <li>
             <div className="flex gap-5 items-center">
-              <button onClick={()=>{navigate("/login")}} className={`${Styles.mainstyle} bg-[--main-color] px-5 p-2 rounded-[8px] text-white`}>
-                Sign in
-              </button>
-              <button onClick={()=>{navigate("/signup")}} className={`${Styles.mainstyle} bg-[--main-color] px-5 p-2 rounded-[8px] text-white`}>
-                Sign up
+             
+              <button onClick={()=>{navigate("/")}} className={`${Styles.mainstyle} bg-[--main-color] px-5 p-2 rounded-[8px] text-white`}>
+                Sign Out
               </button>
             </div>
           </li>

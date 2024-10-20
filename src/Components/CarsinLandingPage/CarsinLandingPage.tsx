@@ -182,7 +182,7 @@ export default function CarsinLandingPage() {
 
       <div className="flex justify-center items-center">
         <div className="grid grid-cols-12 gap-3 pt-10 md:w-[80%]">
-          {carsList?.slice(0, 4).map((ele: Car, index: number) => (
+          {carsList?.slice(0, 4).map((ele: Car) => (
             <div
               className="col-span-12 lg:col-span-3 flex justify-center items-center"
               key={ele.id}
@@ -256,9 +256,13 @@ export default function CarsinLandingPage() {
                 </div>
 
                 <div className="flex justify-center items-center">
-                  <button className="w-[208px] h-[40px] bg-[#1572D3] text-[#fff] p-[8px] gap-4 rounded-lg font-poppins text-[14px] font-medium leading-[17px] text-center flex items-center justify-center">
+                <Link to={`/car/${ele.id}`}>
+                
+                  <button  className="w-[208px] h-[40px] bg-[#1572D3] text-[#fff] p-[8px] gap-4 rounded-lg font-poppins text-[14px] font-medium leading-[17px] text-center flex items-center justify-center">
                     Rent Now <img src={right} alt="" />
                   </button>
+                
+                </Link>
                 </div>
               </div>
             </div>
