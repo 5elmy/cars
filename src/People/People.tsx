@@ -7,7 +7,7 @@ import image3 from ".././assets/images/people/girl.png";
 
 export default function People() {
   return (
-    <div className="bg-[#F7FBFF] relative  ">
+    <div className="bg-[#F7FBFF] relative py-8 ">
       <div className="flex  justify-center  items-center">
         <div className="w-[90%] flex justify-between  ">
           <div className=" flex items-start ">

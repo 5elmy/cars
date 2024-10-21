@@ -79,9 +79,9 @@ export default function AllCars() {
   return (
     <>
               {currentCars.length>0 ?  
-               <div className="pt-10">
-      <div className="flex items-center space-x-2 text-sm font-medium text-gray-600 pb-10 w-[90%] ms-10">
-        <a href="#" className="text-blue-500 hover:underline">Home</a>
+               <div className="py-10">
+      <div className="flex items-center space-x-2 text-sm font-medium text-gray-600 pb-10 w-[90%] mt-20 ms-10">
+        <Link to="/all" className="text-blue-500 hover:underline">Home</Link>
         <span>/</span>
         <span className="text-gray-500">Cars</span>
       </div>

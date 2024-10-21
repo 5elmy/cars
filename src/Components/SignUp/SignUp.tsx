@@ -253,7 +253,7 @@ export default function SignUp() {
                 </button>
               </div>
               <p className="text-center py-3 edu text-gray-400">
-                If you have an account?{" "}
+                Already have an account?{" "}
                 <Link to={"/"} className="text-[--main-color]">
                   Sign in
                 </Link>

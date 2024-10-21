@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import logo from "../../assets/images/Navbar/logo.svg";
 import Styles from "./Navbar.module.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({bol}:any) {
+  console.log({bol});
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -175,49 +177,49 @@ export default function Navbar() {
       </nav> */}
 
 <nav
-      className={`fixed w-full mt-5 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+      className={`fixed w-full transition-all duration-300 ${
+        isScrolled || bol==true ? "bg-white shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="flex flex-wrap items-center justify-between mx-auto p-4 xl:w-[75%]">
         <div className="flex md:justify-between items-center gap-8">
-          <a href="" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Link to="/all" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src={logo} className="h-8" alt="Flowbite Logo" />
-          </a>
+          </Link>
 
           <div className="hidden w-full xl:block md:w-auto">
             <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/Home"
                   className={`block py-2 px-3 rounded md:bg-transparent md:p-0 ${Styles.mainstyle}`}
                 >
                   Become a renter
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/cars"
                   className={`block py-2 px-3 rounded md:bg-transparent md:p-0 ${Styles.mainstyle}`}
                 >
                   Rental deals
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/work"
                   className={`block py-2 px-3 rounded md:bg-transparent md:p-0 ${Styles.mainstyle}`}
                 >
                   How it works
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/ChooseCar"
                   className={`block py-2 px-3 rounded md:bg-transparent md:p-0 ${Styles.mainstyle}`}
                 >
                   Why choose us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -247,39 +249,39 @@ export default function Navbar() {
         </button>
       </div>
 
-      <div className={`${isMenuOpen ? "block" : "hidden"} w-[95%] mx-auto bg-blue-300 z-40 rounded-lg lg:hidden text-white`}>
+      <div className={`${isMenuOpen ? "block" : "hidden"}  w-[95%] mx-auto bg-blue-300 z-40 rounded-lg lg:hidden text-white`}>
         <ul className="flex flex-col p-4 rounded-lg">
           <li>
-            <a
-              href="#"
+            <Link
+              to="/Home"
               className={`block my-5 text-white lg:text-[--text-color] py-2 px-3 rounded md:bg-transparent md:p-0 ${Styles.mainstyle}`}
             >
               Become a renter
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+               to="/cars"
               className={`block my-5 text-white lg:text-[--text-color] py-2 px-3 rounded md:bg-transparent md:p-0 ${Styles.mainstyle}`}
             >
               Rental deals
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/work"
               className={`block my-5 text-white lg:text-[--text-color] py-2 px-3 rounded md:bg-transparent md:p-0 ${Styles.mainstyle}`}
             >
               How it works
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+               to="/ChooseCar"
               className={`block my-5 text-white lg:text-[--text-color] py-2 px-3 rounded md:bg-transparent md:p-0 ${Styles.mainstyle}`}
             >
               Why choose us
-            </a>
+            </Link>
           </li>
           <li>
             <div className="flex gap-5 items-center">

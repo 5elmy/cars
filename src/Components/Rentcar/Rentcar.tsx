@@ -37,7 +37,7 @@ export default function Rentcar() {
                 placeholder="Email"
                 className="w-[374px] h-[56px]  border-none gap-0 rounded-[61px]  bg-[#CEDCFF] my-3"
               />
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center  w-[87%]">
                 <button className="w-[159px] h-[48px]  p-[8px] gap-2 rounded-lg  bg-[#1572D3] text-white">
                   Send
                 </button>

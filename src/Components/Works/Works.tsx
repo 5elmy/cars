@@ -8,7 +8,7 @@ import jaguar from "../../assets/images/works/jaguar.png";
 export default function Works() {
   return (
     <section className="p-5 ">
-      <div className="flex flex-col justify-center items-center my-5 md:my-0  ">
+      <div className="flex flex-col justify-center items-center mt-[60px] mb-5   ">
         <button className="md:w-[161px] h-[42px] pt-1 px-8 bg-[--main-bg] gap-2 rounded-lg  font-poppins text-sm font-medium leading-[21px] text-center text-[--main-color]">
           HOW IT WORK
         </button>

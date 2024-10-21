@@ -1,6 +1,4 @@
-
-
-import Style from "./Login.module.css";
+import Style from "./VerificationCode.module.css";
 import car from "../../assets/images/ChooseCar/Audi 1.png";
 import logo from "../../assets/images/login/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,23 +6,21 @@ import { useFormik } from "formik";
 import * as Yup from "yup"; // Import Yup
 
 
-export default function Login() {
+export default function VerificationCode() {
   let navigate = useNavigate();
 
 
   const validationSchema = Yup.object({
-    Email: Yup.string()
-      .required("Email is required")
-      .email("Invalid email format"),
-    Password: Yup.string()
-      .required("Password is required")
-      .min(6, "Password must be at least 6 characters"),
+    otp: Yup.number()
+      .required("OTP is required")
+     
+
   });
 
   const loginFormik = useFormik({
     initialValues: {
-      Email: "",
-      Password: "",
+      otp: "",
+     
     },
     validationSchema, // Add validation schema here
     onSubmit: async (values) => {
@@ -45,7 +41,7 @@ export default function Login() {
       //   console.log({ err });
       // }
 
-      navigate("/all")
+      navigate("/reset-password")
 
     },
   });
@@ -62,51 +58,33 @@ export default function Login() {
               <img src={logo} alt="rentcar" className="" />
             </div>
             <p className="text-center leading-[21px] font-semibold text-[20px] text-[--main-color] my-3 edu">
-              Sign in 
+              Forget Password
             </p>
-            <form onSubmit={loginFormik.handleSubmit} className="mt-5">
-              <label htmlFor="Email" className="text-[--main-color]">Email Address</label>
+            <form onSubmit={loginFormik.handleSubmit} className="mt-5 w-full">
+              <label htmlFor="otp" className="text-[--main-color]">Verification Code</label>
               <input
-                name="Email"
+                name="otp"
                 onChange={loginFormik.handleChange}
                 onBlur={loginFormik.handleBlur}
-                placeholder="Email"
-                type="email"
+                placeholder="Enter OTP"
+                type="text"
                 className="border-none focus:outline-none w-full shadow-md h-[44px] rounded-lg my-5 bg-[--main-bg]"
               />
-              {loginFormik.touched.Email && loginFormik.errors.Email ? (
-                <div className="text-red-600">{loginFormik.errors.Email}</div>
+              {loginFormik.touched.otp && loginFormik.errors.otp ? (
+                <div className="text-red-600 pb-2">{loginFormik.errors.otp}</div>
               ) : null}
 
-              <label htmlFor="Password" className="text-[--main-color]">Password</label>
-              <input
-                name="Password"
-                onChange={loginFormik.handleChange}
-                onBlur={loginFormik.handleBlur}
-                placeholder="Password"
-                type="password"
-                className="border-none focus:outline-none w-full shadow-md h-[44px] rounded-lg mt-5 mb-3 bg-[--main-bg]"
-              />
-              {loginFormik.touched.Password && loginFormik.errors.Password ? (
-                <div className="text-red-600">{loginFormik.errors.Password}</div>
-              ) : null}
-
-              <div className="flex justify-end items-center">
-                <Link to={"/forget-password"}>
-                <p className="  text-blue-400 edu mb-1 cursor-pointer">Forget Password ?</p>
-                
-                </Link>
-              </div>
+             
 
               <div className="flex justify-center items-center">
                 <button type="submit" className="bg-[--main-color] px-8 text-white h-[44px] w-[161px] rounded-lg edu">
-                  Sign In
+                  Verify
                 </button>
               </div>
-              <p className="text-center py-3 text-gray-400 edu">
-                If Not have an account?{" "}
-                <Link to="/signup" className="text-[--main-color]">
-                  Sign Up Free
+              <p className="text-center py-3 edu text-gray-400">
+                Already have an account?{" "}
+                <Link to={"/"} className="text-[--main-color]">
+                  Sign in
                 </Link>
               </p>
             </form>
