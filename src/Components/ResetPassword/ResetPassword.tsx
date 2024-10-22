@@ -22,14 +22,17 @@ export default function ResetPassword() {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
-  const validationSchema = Yup.object({
-    Password: Yup.string()
-      .min(8, "Password must be at least 8 characters long")
-      .required("Password is required"),
-    ConfirmPassword: Yup.string()
-      .oneOf([Yup.ref("Password"), undefined], "Passwords must match")
-      .required("Confirm Password is required"),
-  });
+const validationSchema = Yup.object({
+  Password: Yup.string()
+    .min(8, "Password must be at least 8 characters long")
+    .required("Password is required"),
+  ConfirmPassword: Yup.string()
+    .required("Confirm Password is required")
+    .test('passwords-match', 'Passwords must match', function (value) {
+      return value === this.parent.Password;
+    }),
+});
+
 
   const loginFormik = useFormik({
     initialValues: {
