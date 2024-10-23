@@ -137,7 +137,7 @@ export default function ResetPassword() {
       .min(8, "Password must be at least 8 characters long")
       .required("Password is required"),
     ConfirmPassword: Yup.string()
-      .oneOf([Yup.ref("Password"), null], "Passwords must match")
+      .oneOf([Yup.ref("Password"), undefined], "Passwords must match")
       .required("Confirm Password is required"),
   });
 
