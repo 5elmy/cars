@@ -104,7 +104,7 @@ export default function Footer() {
             <p className="font-poppins text-[16px] font-medium leading-[24px] text-left text-white mt-2">
               Follow Us
             </p>
-            <div className="flex justify-center items-center gap-3 my-2">
+            <div className="flex j gap-3 my-2">
               <img className="" src={facebook} alt="" />
               <img className="" src={insta} alt="" />
               <img className="" src={youtube} alt="" />

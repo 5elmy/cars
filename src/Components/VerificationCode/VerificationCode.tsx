@@ -3,7 +3,7 @@ import car from "../../assets/images/ChooseCar/Audi 1.png";
 import logo from "../../assets/images/login/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import * as Yup from "yup"; // Import Yup
+import * as Yup from "yup"; 
 import { toast } from "react-toastify";
 
 
