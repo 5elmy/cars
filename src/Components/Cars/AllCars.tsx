@@ -200,6 +200,11 @@ export default function AllCars() {
         <span>/</span>
         <span className="text-gray-500">Cars</span>
       </div>
+      <div className="mt-12 pt-5">
+      <Search searchQuery={searchQuery} handleSearchInputChange={handleSearchInputChange}/>
+
+      </div>
+
           <div className="flex justify-center items-center  min-h-[90vh]">
 
           <div className="lds-facebook "><div></div><div></div><div></div></div>
