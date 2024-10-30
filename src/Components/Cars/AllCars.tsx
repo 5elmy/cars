@@ -98,9 +98,9 @@ export default function AllCars() {
               <div className="md:w-[80%] bg-white shadow-2xl p-3 rounded-lg">
                 <div className="flex justify-center items-center">
                   {ele.availability === true ? (
-                    <img src={bluecar} className="w-[100]" alt={ele.car_model} />
+                    <img src={bluecar} className="w-[100] h-[100px]" alt={ele.car_model} />
                   ) : (
-                    <img src={graycar} alt={ele.car} />
+                    <img src={graycar} className="w-[100] h-[100px]" alt={ele.car} />
                   )}
                 </div>
 

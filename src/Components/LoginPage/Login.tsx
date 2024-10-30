@@ -6,6 +6,7 @@ import logo from "../../assets/images/login/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup"; // Import Yup
+import { toast } from "react-toastify";
 
 
 export default function Login() {
@@ -45,6 +46,7 @@ export default function Login() {
       //   console.log({ err });
       // }
 
+      toast.info("Sign In successfully")
       navigate("/all")
 
     },
@@ -53,10 +55,10 @@ export default function Login() {
   return (
     <div>
       <div className="grid grid-cols-12 gap-3">
-        <div className={`${Style.bg} col-span-12 md:col-span-7 flex items-center`}>
+        <div className={`${Style.bg} col-span-12 md:col-span-7 md:flex items-center hidden `}>
           <img src={car} alt="" className={`${Style.animate}`} />
         </div>
-        <div className="col-span-12 md:col-span-4 flex justify-center items-center">
+        <div className="col-span-12 md:col-span-4 flex justify-center items-center min-h-screen md:min-h-0">
           <div className={`bg-[--main-bg] rounded-lg p-5 py-10 w-[90%] shadow-lg flex flex-col justify-center items-center`}>
             <div className="mb-10 w-full">
               <img src={logo} alt="rentcar" className="" />

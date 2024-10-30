@@ -36,7 +36,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="col-span-3 md:col-span-2">
+          <div className="col-span-6 md:col-span-2">
             <p className="font-poppins text-[16px] font-medium leading-[24px] text-left text-white mt-2">
               Our Product
             </p>
@@ -56,7 +56,7 @@ export default function Footer() {
               Priceline
             </p>
           </div>
-          <div className="col-span-3 md:col-span-2">
+          <div className="col-span-6 md:col-span-2">
             <p className="font-poppins text-[16px] font-medium leading-[24px] text-left text-white mt-2">
               Resources
             </p>
@@ -79,7 +79,7 @@ export default function Footer() {
               Developer
             </p>
           </div>
-          <div className="col-span-3 md:col-span-2">
+          <div className="col-span-6 md:col-span-2">
             <p className="font-poppins text-[16px] font-medium leading-[24px] text-left text-white mt-2">
               About Rentcars
             </p>
@@ -100,11 +100,11 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="col-span-3 md:col-span-2">
+          <div className="col-span-6 md:col-span-2">
             <p className="font-poppins text-[16px] font-medium leading-[24px] text-left text-white mt-2">
               Follow Us
             </p>
-            <div className="flex gap-3 my-2">
+            <div className="flex justify-center items-center gap-3 my-2">
               <img className="" src={facebook} alt="" />
               <img className="" src={insta} alt="" />
               <img className="" src={youtube} alt="" />

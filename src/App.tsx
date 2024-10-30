@@ -1,5 +1,6 @@
 
 import { createHashRouter, RouterProvider } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 import MainLayout from "./Components/MainLayout/MainLayout";
 import Home from "./Components/Home/Home";
@@ -18,6 +19,7 @@ import VerificationCode from "./Components/VerificationCode/VerificationCode";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import SignUp from "./Components/SignUp/SignUp";
 import CarsSection from "./Components/Cars/CarsSection";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const routes = createHashRouter([
@@ -36,6 +38,7 @@ function App() {
         { path: "ChooseCar", element: <ChooseCar /> },
         { path: "people", element: <People /> },
         { path: "rentcar", element: <Rentcar /> },
+        { path: "car/:id", element: <CarsSection /> }, 
         { path: "footer", element: <Footer /> },
       ],
       errorElement: <NotFound />,
@@ -48,6 +51,7 @@ function App() {
   return (
     <CarsProvider>
       <RouterProvider router={routes} />
+      <ToastContainer />
     </CarsProvider>
   );
 }

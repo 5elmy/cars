@@ -127,6 +127,7 @@ import logo from "../../assets/images/login/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup"; // Import Yup
+import { toast } from "react-toastify";
 
 
 export default function SignUp() {
@@ -174,16 +175,17 @@ export default function SignUp() {
       //   console.log({ err });
       // }
       navigate("/");
+      toast.info("User Added Successfully")
     },
   });
 
   return (
     <div>
       <div className="grid grid-cols-12 gap-3">
-        <div className={`${Style.bg} col-span-12 md:col-span-7 flex items-center`}>
+        <div className={`${Style.bg} col-span-12 md:col-span-7 md:flex hidden items-center`}>
           <img src={car} alt="" className={`${Style.animate} w-[70%]`} />
         </div>
-        <div className="col-span-12 md:col-span-4 flex justify-center items-center">
+        <div className="col-span-12 md:col-span-4 flex justify-center items-center min-h-screen md:min-h-0">
           <form
             onSubmit={signupFormik.handleSubmit}
             className={`bg-[--main-bg] rounded-lg p-5 w-[90%] shadow-lg flex flex-col justify-center items-center`}

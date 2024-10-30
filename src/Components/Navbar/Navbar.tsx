@@ -177,7 +177,7 @@ export default function Navbar({bol}:any) {
       </nav> */}
 
 <nav
-      className={`fixed w-full transition-all duration-300 ${
+      className={`fixed z-40 w-full transition-all duration-300 ${
         isScrolled || bol==true ? "bg-white shadow-lg" : "bg-transparent"
       }`}
     >
